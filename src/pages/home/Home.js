@@ -4,7 +4,7 @@ import CharacterCard from '../../components/card/CharacterCard';
 import { Container, Row, Nav, Navbar, Button, Pagination } from 'react-bootstrap';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-import logo from './img/logo.png'
+import logo from './img/logo.png';
 
 
 const Home = () => {
