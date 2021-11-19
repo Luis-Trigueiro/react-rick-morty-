@@ -1,7 +1,11 @@
 import { Card, Button, Container, Row, Col, ListGroup } from "react-bootstrap";
+import { useNavigate } from 'react-router';
+
 import PropTypes from 'prop-types'
 
 const CharacterCard = ({ character }) => {
+
+  const history = useNavigate()
 
   return (
 
@@ -15,7 +19,7 @@ const CharacterCard = ({ character }) => {
             <ListGroup.Item className="text-center">Gender: {character.gender}</ListGroup.Item>
             <ListGroup.Item className="text-center">Status: {character.status}</ListGroup.Item>
           </ListGroup>
-          <Button style={{background:"black",border:"black"}}>Go somewhere</Button>
+          <Button onClick={() => history(`/${character.id}`)} style={{background:"black",border:"black"}}>Go somewhere</Button>
         </Card.Body>
       </Card>
     </Col>

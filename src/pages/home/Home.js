@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import CharacterCard from '../../components/card/CharacterCard';
-import { Container, Row, Nav, Navbar, Button, Pagination } from 'react-bootstrap';
+import { Container, Row,Button} from 'react-bootstrap';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import NavBar from '../../components/navbar/NavBar';
 
-import logo from './img/logo.png';
+
 
 
 const Home = () => {
@@ -24,26 +25,10 @@ const Home = () => {
     return (
         <>
             <header>
-                <Navbar bg="light">
-                    <Container>
-                        <Navbar.Brand href="#home">
-                            <img
-                                src={logo}
-                                width="95px"
-                                className="d-inline-block align-top"
-                                alt="Rick and Morty logo"
-                            />
-                        </Navbar.Brand>
-                        <Nav className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
-                        </Nav>
-                    </Container>
-                </Navbar>
+              <NavBar/>
             </header>
 
-            <Row style={{ background: "black", padding: "110px 0 0 50px" }}>
+            <Row style={{ background: "black", padding: "26px 0 0 50px" }}>
                 {allCharacters?.map((character, index) => (<CharacterCard key={index} character={character} />))}
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     {characters.info?.prev && <Button style={{margin:"20px"}} onClick={backPage}>Back</Button>}
