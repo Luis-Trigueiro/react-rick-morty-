@@ -13,7 +13,7 @@ const Home = () => {
 
     useEffect(() => {
         axios.get('https://rickandmortyapi.com/api/character').then(res => { setCharacters(res.data) })
-    }, [])
+    }, []);
 
     const allCharacters = characters.results;
 
