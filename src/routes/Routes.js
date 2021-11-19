@@ -8,7 +8,7 @@ import {
 
 const Routes = () => {
     return (
-        <Router basename={process.env.PUBLIC_URL>
+        <Router basename={process.env.PUBLIC_URL}>
             <Switch>
                 <Route path="/" element={<Home/>} />
             </Switch>
