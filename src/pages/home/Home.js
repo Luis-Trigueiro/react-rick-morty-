@@ -43,7 +43,7 @@ const Home = () => {
                 </Navbar>
             </header>
 
-            <Row style={{ background: "black", padding: "110px" }}>
+            <Row style={{ background: "black", padding: "110px 0 0 50px" }}>
                 {allCharacters?.map((character, index) => (<CharacterCard key={index} character={character} />))}
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     {characters.info?.prev && <Button style={{margin:"20px"}} onClick={backPage}>Back</Button>}
