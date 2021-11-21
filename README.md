@@ -1,7 +1,7 @@
 # Create using:
 Routes;
 Aixo;
-Reac Bootstrap;
+React Bootstrap;
 Components;
 Props;
 
