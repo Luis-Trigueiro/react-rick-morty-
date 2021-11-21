@@ -19,7 +19,7 @@ const CharacterCard = ({ character }) => {
             <ListGroup.Item className="text-center">Gender: {character.gender}</ListGroup.Item>
             <ListGroup.Item className="text-center">Status: {character.status}</ListGroup.Item>
           </ListGroup>
-          <Button onClick={() => history(`/${character.id}`)} style={{background:"black",border:"black"}}>Go somewhere</Button>
+          <Button onClick={() => history(`/${character.id}`)} style={{ background: "black", border: "black" }}>See more</Button>
         </Card.Body>
       </Card>
     </Col>

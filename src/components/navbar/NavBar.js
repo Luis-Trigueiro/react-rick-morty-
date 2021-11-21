@@ -1,27 +1,37 @@
-import { Navbar,Nav,Container} from "react-bootstrap"
+import { Navbar, Nav, Container } from "react-bootstrap"
+import { useNavigate } from 'react-router';
+import PropTypes from 'prop-types'
 
 import logo from './img/logo.png';
 
-const NavBar=()=>{
 
-    return(
+const NavBar = ({ alive, dead, all }) => {
+
+    const history = useNavigate()
+
+    return (
         <Navbar bg="light">
-        <Container>
-            <Navbar.Brand href="#home">
-                <img
-                    src={logo}
-                    width="95px"
-                    className="d-inline-block align-top"
-                    alt="Rick and Morty logo"
-                />
-            </Navbar.Brand>
-            <Nav className="me-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#features">Features</Nav.Link>
-                <Nav.Link href="#pricing">Pricing</Nav.Link>
-            </Nav>
-        </Container>
-    </Navbar>
+            <Container>
+                <Navbar.Brand style={{cursor:"pointer"}} onClick={() => history(`/`)}>
+                    <img
+                        src={logo}
+                        width="95px"
+                        className="d-inline-block align-top"
+                        alt="Rick and Morty logo"
+                    />
+                </Navbar.Brand>
+                <Nav className="me-auto">
+                    <Nav.Link onClick={all}>All</Nav.Link>
+                    <Nav.Link onClick={alive}>Alive</Nav.Link>
+                    <Nav.Link onClick={dead}>Dead</Nav.Link>
+                </Nav>
+            </Container>
+        </Navbar>
     )
+}
+NavBar.propTypes = {
+    alive: PropTypes.func,
+    dead: PropTypes.func,
+    all: PropTypes.func
 }
 export default NavBar
